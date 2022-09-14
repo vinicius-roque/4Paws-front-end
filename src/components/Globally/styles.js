@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const AppWrapper = styled.main`
-    background-color: red;
+    background-color: yellow;
     min-width: 100vw;
     width: 100%;
     min-height: 100vh;
