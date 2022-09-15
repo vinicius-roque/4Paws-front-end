@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export default function Product() {
+export default function Product( {name, price, img, type} ) {
   return (
     <Wrapper>
-      <img src="https://cf.shopee.com.br/file/bdd90426b3eb1b6d1432099ac724bd7d" />
-      <h3> Bebedouro fonte para gatos </h3>
-      <p> R$ 36,00 </p>
+      <img src={img} />
+      <h3>{name}</h3>
+      <p> R$ {price}</p>
       <button> Adicionar ao carrinho </button>
     </Wrapper>
   );

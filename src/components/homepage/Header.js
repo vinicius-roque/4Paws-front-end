@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <div>
@@ -18,9 +22,9 @@ export default function Header() {
             <ion-icon name="bag-handle-outline"></ion-icon>
           </span>
           <div>
-            <span>Login</span>
+            <span onClick={navigate('/')}>Login</span>
             <span>|</span>
-            <span>Cadastro</span>
+            <span onClick={navigate('/sign-up')}>Cadastro</span>
           </div>
         </Buttons>
       </div>
