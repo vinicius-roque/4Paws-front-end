@@ -4,6 +4,7 @@ import Checkout from "../Checkout.js";
 import SignUp from "../Login/SignUp.js";
 import SignIn from "../Login/SignIn.js";
 import { AppWrapper } from "../Globally/styles.js";
+import HomePage from "../homepage/HomePage.js";
 
 
 export default function App() {
@@ -14,8 +15,9 @@ export default function App() {
             <Routes>
              <Route path="/" element={<SignIn />} />
              <Route path="/sign-up" element={<SignUp />} /> 
-             <Route path="/Cart" element={<Cart />} />
-             <Route path="/Checkout" element={<Checkout />} />
+             <Route path="/home" element={<HomePage />} /> 
+             <Route path="/cart" element={<Cart />} />
+             <Route path="/checkout" element={<Checkout />} />
             </Routes>
         </BrowserRouter>
       </AppWrapper>
