@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
-
-  const navigate = useNavigate();
 
   return (
     <Wrapper>
@@ -19,12 +17,12 @@ export default function Header() {
         </Menu>
         <Buttons>
           <span>
-            <ion-icon name="bag-handle-outline"></ion-icon>
+            <Link to={'/cart'}><ion-icon name="bag-handle-outline"></ion-icon></Link>
           </span>
           <div>
-            <span onClick={navigate('/')}>Login</span>
+            <Link to={'/sign-in'}>Login</Link>
             <span>|</span>
-            <span onClick={navigate('/sign-up')}>Cadastro</span>
+            <Link to={'sign-up'}>Cadastro</Link>
           </div>
         </Buttons>
       </div>
@@ -56,6 +54,15 @@ const Wrapper = styled.div`
   img {
     height: 50px;
     width: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  a:visited {
+    color: #000000;
+    text-decoration: none;
   }
 `;
 
