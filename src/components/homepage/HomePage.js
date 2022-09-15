@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function HomePage() {
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -23,7 +22,14 @@ export default function HomePage() {
     <Wrapper>
       <Header />
       <Products>
-        {products.map((product) => <Product name={product.name} price={product.price} img={product.img} type={product.type} />)}
+        {products.map((product) => (
+          <Product
+            name={product.name}
+            price={product.price}
+            img={product.img}
+            type={product.type}
+          />
+        ))}
       </Products>
     </Wrapper>
   );
