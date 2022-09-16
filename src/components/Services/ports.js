@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiPath = 'https://git.heroku.com/ecommerce-4paws.git';
+const apiPath = 'https://ecommerce-4paws.herokuapp.com/';
 
 function registerUser(body) {
     return axios.post(`${apiPath}/auth/sign-up`, body);
