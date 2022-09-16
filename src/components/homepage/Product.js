@@ -5,7 +5,7 @@ export default function Product({ id, name, price, img, type }) {
   function addToCart() {
     console.log("rodei uma vez");
     
-    const promise = axios.post("https://git.heroku.com/ecommerce-4paws.git/cart", { id: id });
+    const promise = axios.post("https://ecommerce-4paws.herokuapp.com//cart", { id: id });
       
     promise.then(alert("O produto foi adicionado ao seu carrinho!"));
     promise.catch((err) => {
