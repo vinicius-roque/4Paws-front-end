@@ -13,7 +13,7 @@ export default function HomePage() {
 
   function getProducts(type) {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://git.heroku.com/ecommerce-4paws.git/products")
       .then((answer) => {
         if (!type) {
           setProducts(answer.data);
