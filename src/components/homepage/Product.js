@@ -1,12 +1,25 @@
 import styled from "styled-components";
+import axios from "axios";
 
-export default function Product( {name, price, img, type} ) {
+export default function Product({ id, name, price, img, type }) {
+  function addToCart() {
+    console.log("rodei uma vez");
+    
+    const promise = axios.post("http://localhost:5000/cart", { id: id });
+      
+    promise.then(alert("O produto foi adicionado ao seu carrinho!"));
+    promise.catch((err) => {
+        console.log(err);
+        alert("Não foi possível adicionar o produto ao seu carrinho!");
+      });
+  }
+
   return (
     <Wrapper>
       <img src={img} />
       <h3>{name}</h3>
       <p> R$ {price}</p>
-      <button> Adicionar ao carrinho </button>
+      <button onClick={() => addToCart()}> Adicionar ao carrinho </button>
     </Wrapper>
   );
 }
@@ -41,7 +54,7 @@ const Wrapper = styled.div`
   }
 
   button {
-    border: 2px solid #E29578;
+    border: 2px solid #e29578;
     background-color: #ffddd2;
     border-radius: 25px;
     padding: 12px;
