@@ -24,6 +24,7 @@ export default function HomePage() {
       <Products>
         {products.map((product) => (
           <Product
+            id={product._id}
             name={product.name}
             price={product.price}
             img={product.img}
