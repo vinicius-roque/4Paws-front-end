@@ -87,7 +87,7 @@ export default function SignUp() {
                     required
                 ></input>
             </form>
-            <p onClick={() => navigate('/')}>Já possui cadastro? Clique aqui para entrar!</p>
+            <p onClick={() => navigate('/sign-in')}>Já possui cadastro? Clique aqui para entrar!</p>
         </FormWrapper>
     );
 }

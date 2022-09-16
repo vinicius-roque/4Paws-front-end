@@ -1,28 +1,45 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function Header() {
-
+export default function Header({ getProducts, products, setProducts }) {
   return (
     <Wrapper>
       <div>
-        <img src="https://i.ibb.co/SDSfsSq/logo.png" />
+        <img onClick={() => getProducts()} src="https://i.ibb.co/SDSfsSq/logo.png" />
         <Menu>
-          <span>Mais Vendidos</span>
-          <span>Gatos</span>
-          <span>Cães</span>
-          <span>Pássaros</span>
-          <span>Répteis</span>
-          <span>Outros Pets</span>
+          <span
+            onClick={() => getProducts("cat")}
+          >
+            Gatos
+          </span>
+          <span
+            onClick={() => getProducts("dog")}
+          >
+            Cães
+          </span>
+          <span
+            onClick={() => getProducts("bird")}
+          >
+            Pássaros
+          </span>
+          <span
+            onClick={() => getProducts("reptile")}
+          >
+            Répteis
+          </span>
+          <span onClick={() => getProducts("other")}
+          >Outros Pets</span>
         </Menu>
         <Buttons>
           <span>
-            <Link to={'/cart'}><ion-icon name="bag-handle-outline"></ion-icon></Link>
+            <Link to={"/cart"}>
+              <ion-icon name="bag-handle-outline"></ion-icon>
+            </Link>
           </span>
           <div>
-            <Link to={'/sign-in'}>Login</Link>
+            <Link to={"/sign-in"}>Login</Link>
             <span>|</span>
-            <Link to={'sign-up'}>Cadastro</Link>
+            <Link to={"sign-up"}>Cadastro</Link>
           </div>
         </Buttons>
       </div>
@@ -74,7 +91,7 @@ const Menu = styled.div`
   gap: 10px;
 
   span {
-    white-space: nowrap; 
+    white-space: nowrap;
     text-align: center;
   }
 `;
