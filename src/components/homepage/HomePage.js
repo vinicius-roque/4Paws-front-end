@@ -11,16 +11,36 @@ export default function HomePage() {
     getProducts();
   }, []);
 
-  function getProducts() {
+  function getProducts(type) {
     axios
       .get("http://localhost:5000/products")
-      .then((answer) => setProducts(answer.data))
+      .then((answer) => {
+        if (!type) {
+          setProducts(answer.data);
+        } else if (type === "other") {
+          setProducts(
+            products.filter(
+              (item) =>
+                (item.type !== "cat") &&
+                (item.type !== "dog") &&
+                (item.type !== "bird") &&
+                (item.type !== "reptile")
+            )
+          );
+        } else {
+          setProducts(answer.data.filter((item) => item.type === type));
+        }
+      })
       .catch((error) => console.log(error));
   }
 
   return (
     <Wrapper>
-      <Header />
+      <Header
+        getProducts={getProducts}
+        products={products}
+        setProducts={setProducts}
+      />
       <Products>
         {products.map((product) => (
           <Product
@@ -46,7 +66,7 @@ const Wrapper = styled.div`
 
 const Products = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   padding-top: 80px;
