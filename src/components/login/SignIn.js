@@ -2,8 +2,17 @@ import { useForm } from "../globally/useForm.js";
 import { Form, useNavigate } from "react-router-dom";
 import { login } from "../services/ports.js";
 import { FormWrapper } from "../globally/styles.js";
+import { useContext } from "react";
+import UserContext from "../../contexts/userContext.js";
 
-export default function SignIn({ setUserData }) {
+export default function SignIn() {
+    const { setUser } = useContext(UserContext);
+
+    function makeLocal(itemjs) {
+        const session = JSON.stringify(itemjs);
+        localStorage.setItem("session", session);
+      }
+
     const [forms, holdForms] = useForm({
         initState: {
             email: "",
@@ -18,11 +27,12 @@ export default function SignIn({ setUserData }) {
         const promise = login(forms);
 
         promise
-        .then(res => {
-            setUserData(res.data);
+        .then(answer => {
+            setUser(answer.data);
+            makeLocal(answer.data);
             navigate('/')
         })
-        .catch(error => alert('Dado(s) inválido(s)'));
+        .catch(() => alert('Dado(s) inválido(s)'));
     }
 
     return (
