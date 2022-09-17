@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import axios from "axios";
+import { addToCartButton } from "../services/ports.js";
 
 export default function Product({ id, name, price, img, type }) {
   function addToCart() {
     console.log("rodei uma vez");
     
-    const promise = axios.post("https://git.heroku.com/ecommerce-4paws.git/cart", { id: id });
-      
+    const promise = addToCartButton({ id: id });
     promise.then(alert("O produto foi adicionado ao seu carrinho!"));
     promise.catch((err) => {
         console.log(err);

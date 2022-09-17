@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function Header({ getProducts, products, setProducts }) {
+export default function Header({ getProducts }) {
   return (
     <Wrapper>
       <div>

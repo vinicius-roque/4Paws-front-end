@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Header from "./Header.js";
 import Product from "./Product.js";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { renderProducts } from "../services/ports.js";
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
@@ -12,9 +12,8 @@ export default function HomePage() {
   }, []);
 
   function getProducts(type) {
-    axios
-      .get("https://git.heroku.com/ecommerce-4paws.git/products")
-      .then((answer) => {
+    const promise = renderProducts();
+    promise.then((answer) => {
         if (!type) {
           setProducts(answer.data);
         } else if (type === "other") {
