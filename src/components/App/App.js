@@ -16,7 +16,7 @@ export default function App() {
       <AppWrapper>
         <BrowserRouter>
             <Routes>
-             <Route path="/" element={<Cart />} />
+             <Route path="/" element={<HomePage />} />
              <Route path="/sign-up" element={<SignUp />} /> 
              <Route path="/sign-in" element={<SignIn />} /> 
              <Route path="/cart" element={<Cart />} />

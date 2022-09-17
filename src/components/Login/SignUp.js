@@ -17,12 +17,14 @@ export default function SignUp() {
 
     function sendForm(e) {
         e.preventDefault();
+        console.log(forms)
         const promise = registerUser(forms);
-
+        
         promise
         .then(() => navigate('/'))
         .catch(error => {
             const errorStatus = error.response.status;
+            
             switch (errorStatus) {
                 case 422:
                     const errorsArray = error.response.data;

@@ -14,6 +14,8 @@ export default function Checkout(){
         setValues({ ...values, [e.target.name]: e.target.value });
         }
 
+    console.log(values)
+
         useEffect(() => {
             getCart();
           }, []);
@@ -39,20 +41,24 @@ export default function Checkout(){
                      {cart.map((product,index) => (
                         <Products>
                         <p>{product.name}</p>
-                        <p>{product.price}</p>
+                        <p>R${product.price}0</p>
                         </Products>
                     ))}
-                    <p>Total da compra: R$ {saldo}0</p>
                 </OrderDescription>
+                <Total>
+                    <h5>Total da compra: </h5>
+                    <h5> R$ {saldo}0</h5>
+                </Total>
             </HeaderPage>
             <PaymentBox>
+                <h3>Insira os dados do Cartao de crédito</h3>
             <Forms >
                 <input type="text" onChange={Change} placeholder=" Nome impresso no cartão" name='cardName'  />
                 <input type="text" onChange={Change} placeholder=" Digitos do cartão" name='cardNumber' />
                 <input type="password" onChange={Change} placeholder=" Código de segurança" name='securityNumber'  />
                 <input type="text" onChange={Change} placeholder=" Validade */*" name='expirationDate' />
                 <Link to="/Success"><button>
-                    <p> ASSINAR</p>
+                    <p> Finalizar pedido</p>
                 </button></Link>
                 </Forms>
             </PaymentBox>
@@ -65,34 +71,96 @@ const Box = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: 80%;
+width: 100%;
+
 `;
 
 const HeaderPage = styled.div`
-
+margin: 0 auto;
 font-size: 20px;
-width: 80%;
+width: 55%;
+min-width: 375px;
+margin-bottom: 15px;
+
+h1{
+    margin-bottom: 15px;
+    background-color: #EDF6F9;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
 `;
 
 const OrderDescription = styled.div`
 display: flex;
 flex-direction: column;
-width: 80%;
+align-items: center;
+width: 100%;
+background-color: #EDF6F9;
+border-radius: 10px;
+
+h5{
+    min-width: 200px;
+}
+`;
+
+const Total = styled.div`
+margin-top: 10px;
+height: 50px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+background-color: #EDF6F9;
+
+h5{
+    text-align: center;
+    min-width: 250px;
+}
 `;
 
 const Products = styled.div`
 display: flex;
-
+p{
+    padding: 15px 15px;
+    min-width: 240px;
+    text-align: center;
+}
 `;
 
 
 const PaymentBox = styled.div`
 display: flex;
-width: 80%;
+flex-direction: column;
+width: 100%;
+
+h3{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
 `;
 
 const Forms = styled.div`
 display: flex;
 flex-direction: column;
-width: 80%;
+align-items: center;
+width: 100%;
+
+input{
+    margin: 5px 0px;
+    width:50%;
+    height: 40px;
+    border-radius: 10px;
+}
+button{
+    min-width: 150px;
+    min-height: 40px;
+    border-radius: 10px;
+}
 `;
