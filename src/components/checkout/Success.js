@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link} from "react-router-dom";
-import Header from './homepage/Header.js';
+import Header from '../homepage/Header.js';
 
 export default function Success(){
 

@@ -6,7 +6,7 @@ import SignUp from '../login/SignUp.js'
 import GlobalStyle from "../globally/globalStyles.js";
 import { AppWrapper } from "../globally/styles.js";
 import HomePage from "../homepage/HomePage.js";
-import Success from "../Success.js";
+import Success from "../checkout/Success.js"
 
 export default function App() {
   return (
