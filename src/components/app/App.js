@@ -8,7 +8,6 @@ import { AppWrapper } from "../globally/styles.js";
 import HomePage from "../homepage/HomePage.js";
 import Success from "../Success.js";
 
-
 export default function App() {
   return (
     <>

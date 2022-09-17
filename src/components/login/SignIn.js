@@ -20,7 +20,7 @@ export default function SignIn({ setUserData }) {
         promise
         .then(res => {
             setUserData(res.data);
-            navigate('/Cart')
+            navigate('/')
         })
         .catch(error => alert('Dado(s) inválido(s)'));
     }
