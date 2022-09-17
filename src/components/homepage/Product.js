@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { addToCartButton } from "../services/ports.js";
 
-export default function Product({ id, name, price, img, type }) {
+export default function Product({ id, name, price, img, quantity,type }) {
   function addToCart() {
-    console.log("rodei uma vez");
+    console.log(id);
     
     const promise = addToCartButton({ id: id });
     promise.then(alert("O produto foi adicionado ao seu carrinho!"));

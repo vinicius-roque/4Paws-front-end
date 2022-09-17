@@ -6,6 +6,7 @@ import SignUp from '../login/SignUp.js'
 import GlobalStyle from "../globally/globalStyles.js";
 import { AppWrapper } from "../globally/styles.js";
 import HomePage from "../homepage/HomePage.js";
+import Success from "../Success.js";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
              <Route path="/sign-in" element={<SignIn />} /> 
              <Route path="/cart" element={<Cart />} />
              <Route path="/checkout" element={<Checkout />} />
+             <Route path="/success" element={<Success />} />
             </Routes>
         </BrowserRouter>
       </AppWrapper>
