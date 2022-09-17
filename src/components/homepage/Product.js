@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import axios from "axios";
+import { addToCartButton } from "../services/ports.js";
 
 export default function Product({ id, name, price, img, quantity,type }) {
   function addToCart() {
     console.log(id);
     
-    const promise = axios.post("http://localhost:5000/cart", { id: id });
-      
+    const promise = addToCartButton({ id: id });
     promise.then(alert("O produto foi adicionado ao seu carrinho!"));
     promise.catch((err) => {
         console.log(err);

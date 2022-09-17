@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { FormWrapper } from "../Globally/styles.js";
-import { useForm } from "../Globally/useForm.js";
-import { registerUser } from "../Services/ports.js";
+import { FormWrapper } from "../globally/styles.js";
+import { useForm } from "../globally/useForm.js";
+import { registerUser } from "../services/ports.js";
 
 export default function SignUp() {
     const [forms, holdForms] = useForm({

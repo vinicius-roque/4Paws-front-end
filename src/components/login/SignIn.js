@@ -1,7 +1,7 @@
-import { useForm } from "../Globally/useForm.js";
+import { useForm } from "../globally/useForm.js";
 import { Form, useNavigate } from "react-router-dom";
-import { login } from "../Services/ports.js";
-import { FormWrapper } from "../Globally/styles.js";
+import { login } from "../services/ports.js";
+import { FormWrapper } from "../globally/styles.js";
 
 export default function SignIn({ setUserData }) {
     const [forms, holdForms] = useForm({
