@@ -21,7 +21,7 @@ export default function SignUp() {
         const promise = registerUser(forms);
         
         promise
-        .then(() => navigate('/'))
+        .then(() => navigate('/sign-in'))
         .catch(error => {
             const errorStatus = error.response.status;
             
