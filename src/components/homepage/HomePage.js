@@ -48,6 +48,7 @@ export default function HomePage() {
             price={product.price}
             img={product.img}
             type={product.type}
+            quantity={product.quantity}
           />
         ))}
       </Products>

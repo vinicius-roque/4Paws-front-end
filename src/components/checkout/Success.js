@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import { Link} from "react-router-dom";
+import Header from './homepage/Header.js';
 
 export default function Success(){
 
     return(
+        <>
+        <Header/>
         <Box>
-            <Header>
+            
+            <HeaderPage>
                 <p> Pagamento efetuado com sucesso !</p>
                 <h1> Estamos felizes em confirmar a aprovação do seu pagamento</h1>
-            </Header>
+            </HeaderPage>
             <Body>
                 <button>
                     <p>Consultar pedidos</p>
@@ -21,20 +25,18 @@ export default function Success(){
                 </button> </Link>
             </Footer>
         </Box>
+        </>
     )
 }
 
 const Box = styled.div`
 display: flex;
 flex-direction: column;
-position: relative;
-max-height: 675px;
-max-width: 375px;
-margin: 0 auto;
-background-color: yellow;
+justify-content: center;
+width: 80%;
 `;
 
-const Header = styled.div`
+const HeaderPage = styled.div`
 display: flex;
 padding: 10% 0%;
 flex-direction: column;

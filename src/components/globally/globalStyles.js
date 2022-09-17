@@ -54,7 +54,7 @@ body {
 	width: 100%;
 	height: fit-content;
 	min-height: 100vh;
-	background-color: #FFFFFF;
+	background-color: white;
 	font-family: 'Lexend Deca', sans-serif;
 }
 .root {
