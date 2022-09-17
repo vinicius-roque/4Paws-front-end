@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export default function Header({ getProducts }) {
+  
   return (
     <Wrapper>
       <div>
@@ -39,7 +40,7 @@ export default function Header({ getProducts }) {
           <div>
             <Link to={"/sign-in"}>Login</Link>
             <span>|</span>
-            <Link to={"sign-up"}>Cadastro</Link>
+            <Link to={"/sign-in"}>Cadastro</Link>
           </div>
         </Buttons>
       </div>
