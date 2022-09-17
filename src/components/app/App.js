@@ -7,7 +7,6 @@ import GlobalStyle from "../globally/globalStyles.js";
 import { AppWrapper } from "../globally/styles.js";
 import HomePage from "../homepage/HomePage.js";
 
-
 export default function App() {
   return (
     <>
