@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 import { Link} from "react-router-dom";
-import Header from './homepage/Header.js';
+import Header from '../homepage/Header.js';
 import axios from "axios";
 
 export default function Checkout(){
