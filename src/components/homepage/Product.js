@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import axios from "axios";
 
-export default function Product({ id, name, price, img, type }) {
+export default function Product({ id, name, price, img, quantity,type }) {
   function addToCart() {
-    console.log("rodei uma vez");
+    console.log(id);
     
     const promise = axios.post("http://localhost:5000/cart", { id: id });
       
