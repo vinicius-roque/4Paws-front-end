@@ -14,7 +14,6 @@ export default function Checkout(){
         setValues({ ...values, [e.target.name]: e.target.value });
         }
 
-    console.log(values)
 
         useEffect(() => {
             getCart();
