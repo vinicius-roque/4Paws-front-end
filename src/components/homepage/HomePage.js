@@ -57,6 +57,7 @@ export default function HomePage() {
 }
 
 const Wrapper = styled.div`
+  background-color: #edf6f9;
   display: flex;
   align-items: center;
   justify-content: center;

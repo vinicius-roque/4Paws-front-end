@@ -10,13 +10,11 @@ export default function Success(){
         <Box>
             
             <HeaderPage>
-                <p> Pagamento efetuado com sucesso !</p>
-                <h1> Estamos felizes em confirmar a aprovação do seu pagamento</h1>
+                <p>Pagamento efetuado com sucesso!</p>
+                <h1>Estamos felizes em confirmar a aprovação do seu pagamento.</h1>
             </HeaderPage>
             <Body>
-                <button>
-                    <p>Consultar pedidos</p>
-                </button>
+                <button>Consultar pedidos</button>
             </Body>
            
             <Footer>
@@ -30,53 +28,72 @@ export default function Success(){
 }
 
 const Box = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
 `;
 
 const HeaderPage = styled.div`
-display: flex;
-padding: 10% 0%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    display: flex;
+    padding: 10% 0%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-h1{
-    text-align: center;
-    font-size: 20px;
-}
+    h1 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    p {
+        margin-bottom: 100px;
+        font-size: 30px;
+    }
 `;
 
 const Body = styled.div`
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-button{
-    height:40px;
-    border-radius: 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    cursor: pointer;
-}
+    justify-content: center;
+    margin: 2px solid black;
+    
+    button {
+        color: #FFFFFF;
+        height: 50px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #83c5be;
+        background-color: #006d77;
+        border-radius: 25px;
+        padding: 12px;
+        cursor: pointer;
+    }
 `;
 
 
 const Footer = styled.div`
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 5% 0px 0px 0px;
-button{
-    height:40px;
-    border-radius: 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    cursor: pointer;
-}
+    justify-content: center;
+    padding: 5% 0px 0px 0px;
+    
+    button {
+        color: #FFFFFF;
+        height: 50px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #83c5be;
+        background-color: #006d77;
+        border-radius: 25px;
+        padding: 12px;
+        cursor: pointer;
+    }
 `;

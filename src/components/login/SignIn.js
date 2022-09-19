@@ -4,6 +4,7 @@ import { login } from "../services/ports.js";
 import { FormWrapper } from "../globally/styles.js";
 import { useContext } from "react";
 import UserContext from "../../contexts/userContext.js";
+import logo from "../../contexts/assets/logo1.png";
 
 export default function SignIn() {
     const { setUser } = useContext(UserContext);
@@ -37,7 +38,7 @@ export default function SignIn() {
 
     return (
         <FormWrapper>
-            <h1>4Paws - Colocar logo aqui</h1>
+            <img src={logo} alt="logo1" />
             <form onSubmit={sendForm}>
                 <input
                     type="email"

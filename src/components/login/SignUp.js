@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { FormWrapper } from "../globally/styles.js";
 import { useForm } from "../globally/useForm.js";
 import { registerUser } from "../services/ports.js";
+import logo from "../../contexts/assets/logo1.png";
 
 export default function SignUp() {
     const [forms, holdForms] = useForm({
@@ -49,7 +50,7 @@ export default function SignUp() {
 
     return (
         <FormWrapper>
-            <h1>4Paws - Colocar logo aqui</h1>
+            <img src={logo} alt="logo1" />
             <form onSubmit={sendForm}>
                 <input
                     type="text"

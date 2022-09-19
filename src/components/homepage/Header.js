@@ -29,7 +29,7 @@ export default function Header({ getProducts }) {
             Répteis
           </span>
           <span onClick={() => getProducts("other")}
-          >Outros Pets</span>
+          >Outros pets</span>
         </Menu>
         <Buttons>
           <span>
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 78px;
-  background-color: #edf6f9;
+  background-color: #83c5be;
   position: fixed;
   top: 0;
   z-index: 99;
@@ -78,9 +78,14 @@ const Wrapper = styled.div`
     text-decoration: none;
     color: #000000;
   }
+  
   a:visited {
     color: #000000;
     text-decoration: none;
+  }
+
+  @media (max-width: 930px) {
+    overflow-x: scroll;
   }
 `;
 
@@ -102,6 +107,7 @@ const Buttons = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 20px;
+  padding-right: 10px;
 
   ion-icon {
     font-size: 30px;
