@@ -114,6 +114,7 @@ const Total = styled.div`
     justify-content: center;
     width: 100%;
     background-color: #83c5be;
+    font-weight: 600;
 
     h5 {
         margin-left: 10px;
@@ -133,6 +134,7 @@ const Products = styled.div`
         padding: 15px 15px;
         min-width: 240px;
         text-align: center;
+        font-weight: 550;
     }
 `;
 
@@ -141,6 +143,7 @@ const PaymentBox = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-weight: 500;
 
     h3 {
         font-size: 20px;
@@ -157,6 +160,7 @@ const Forms = styled.div`
     width: 100%;
 
     input {
+        font-family: 'Recursive', sans-serif;
         background-color: #edf6f9;
         margin: 5px 0px;
         width: 50%;
@@ -172,5 +176,6 @@ const Forms = styled.div`
         border-radius: 10px;
         background-color: #006d77;
         border: 2px solid #83c5be;
+        cursor: pointer;
     }
 `;

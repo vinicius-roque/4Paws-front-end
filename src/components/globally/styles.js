@@ -18,8 +18,8 @@ const FormWrapper = styled.div`
     flex-direction: column;
     
     img {
-        width: 400px;
-        height: 400px;
+        width: 325px;
+        height: 325px;
         margin-bottom: 20px;
     }
 
@@ -32,6 +32,7 @@ const FormWrapper = styled.div`
     }
 
     input {
+        font-family: 'Recursive', sans-serif;
         background-color: #83c5be;
         color: #000000;
         width: 326px;
@@ -50,12 +51,14 @@ const FormWrapper = styled.div`
     input[type="submit"] {
         background-color: #006d77;
         color: #FFFFFF;
+        font-weight: 550;
         border: 2px solid #83c5be;
         cursor: pointer;
     }
 
     p {
         font-size: 17px;
+        font-weight: 550;
         cursor: pointer;
     }
 `;

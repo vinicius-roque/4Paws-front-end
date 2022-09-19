@@ -81,6 +81,7 @@ const HeaderPage = styled.div`
     border-radius: 5px;
     padding: 10px;
     color: #FFFFFF;
+    font-weight: 600;
 
     @media (max-width: 850px) {
         flex-direction: column;
@@ -132,7 +133,7 @@ const Footer = styled.div`
     position: fixed;
     bottom: 0;
     margin-bottom: 2px;
-    color: #FFFFFF;
+    font-weight: 550;
 
     p {  
         margin-left: 5%; 
@@ -142,9 +143,10 @@ const Footer = styled.div`
     button {
         background-color: #83c5be;
         border-radius: 10px;
-        height:35px;
+        height: 40px;
         margin-right: 5%;
         border: 2px solid #edf6f9;  
+        font-weight: 500;
     }
 
     @media (max-width: 350px) {
@@ -177,6 +179,7 @@ const Product = styled.div`
         padding: 15px 6%;
         min-width: 120px;
         width: 40%;
+        font-weight: 600;
     }
 
     h5 {
@@ -185,6 +188,7 @@ const Product = styled.div`
         padding: 15px 0px 15px 5%;
         min-width: 120px;
         width: 50%;
+        font-weight: 550;
     }
 
     h4 {
@@ -200,6 +204,7 @@ const Product = styled.div`
         background-color: #006d77;
         border-radius: 25px;
         padding: 12px;
+        font-weight: 550;
         cursor: pointer;
     }
 

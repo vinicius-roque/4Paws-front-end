@@ -46,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	* {
+		font-family: 'Raleway', sans-serif;
 		box-sizing: border-box;
 		text-decoration: none;
 	}
@@ -55,8 +56,8 @@ const GlobalStyle = createGlobalStyle`
 		width: 100%;
 		height: fit-content;
 		min-height: 100vh;
-		background-color: white;
-		font-family: 'Lexend Deca', sans-serif;
+		background-color: #edf6f9;
+		text-decoration: none;
 	}
 	
 	.root {

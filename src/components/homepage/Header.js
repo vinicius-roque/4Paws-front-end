@@ -95,10 +95,12 @@ const Menu = styled.div`
   justify-content: space-between;
   flex-grow: 1;
   gap: 10px;
+  cursor: pointer;
 
   span {
     white-space: nowrap;
     text-align: center;
+    font-weight: 550;
   }
 `;
 
@@ -108,6 +110,7 @@ const Buttons = styled.div`
   justify-content: flex-end;
   gap: 20px;
   padding-right: 10px;
+  font-weight: 550;
 
   ion-icon {
     font-size: 30px;
