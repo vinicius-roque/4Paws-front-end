@@ -40,26 +40,25 @@ export default function Checkout(){
                      {cart.map((product,index) => (
                         <Products>
                         <p>{product.name}</p>
-                        <p>R${product.price}0</p>
+                        <p>R$ {product.price}0</p>
                         </Products>
                     ))}
                 </OrderDescription>
                 <Total>
-                    <h5>Total da compra: </h5>
-                    <h5> R$ {saldo}0</h5>
+                    <h5>Total da compra: R$ {saldo.toFixed(2)}</h5>
                 </Total>
             </HeaderPage>
             <PaymentBox>
-                <h3>Insira os dados do Cartao de crédito</h3>
+                <h3>Insira os dados do cartão:</h3>
             <Forms >
                 <input type="text" onChange={Change} placeholder=" Nome impresso no cartão" name='cardName'  />
                 <input type="text" onChange={Change} placeholder=" Digitos do cartão" name='cardNumber' />
                 <input type="password" onChange={Change} placeholder=" Código de segurança" name='securityNumber'  />
                 <input type="text" onChange={Change} placeholder=" Validade */*" name='expirationDate' />
                 <Link to="/Success"><button>
-                    <p> Finalizar pedido</p>
+                    <p>Finalizar pedido</p>
                 </button></Link>
-                </Forms>
+            </Forms>
             </PaymentBox>
         </Box>
         </>
@@ -67,19 +66,18 @@ export default function Checkout(){
 }
 
 const Box = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 100%;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 `;
 
 const HeaderPage = styled.div`
-margin: 0 auto;
-font-size: 20px;
-width: 55%;
-min-width: 375px;
-margin-bottom: 15px;
+    margin: 0 auto;
+    font-size: 20px;
+    width: 55%;
+    min-width: 375px;
+    margin-bottom: 15px;
 
 h1{
     margin-bottom: 15px;
@@ -94,72 +92,85 @@ h1{
 `;
 
 const OrderDescription = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-background-color: #EDF6F9;
-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #EDF6F9;
+    border-radius: 10px;
 
-h5{
-    min-width: 200px;
-}
+    h5 {
+        min-width: 200px;
+    }
 `;
 
 const Total = styled.div`
-margin-top: 10px;
-height: 50px;
-border-radius: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-background-color: #EDF6F9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #83c5be;
 
-h5{
-    text-align: center;
-    min-width: 250px;
-}
+    h5 {
+        margin-left: 10px;
+        text-align: center;
+        min-width: 250px;
+    }
 `;
 
 const Products = styled.div`
-display: flex;
-p{
-    padding: 15px 15px;
-    min-width: 240px;
-    text-align: center;
-}
+    display: flex;
+    
+    :first-child {
+        margin-top: 25px;
+    }
+    
+    p {
+        padding: 15px 15px;
+        min-width: 240px;
+        text-align: center;
+    }
 `;
 
 
 const PaymentBox = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
-h3{
-display: flex;
-flex-direction: column;
-align-items: center;
-
-}
+    h3 {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const Forms = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
-input{
-    margin: 5px 0px;
-    width:50%;
-    height: 40px;
-    border-radius: 10px;
-}
-button{
-    min-width: 150px;
-    min-height: 40px;
-    border-radius: 10px;
-}
+    input {
+        background-color: #edf6f9;
+        margin: 5px 0px;
+        width: 50%;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid #006d77;
+    }
+
+    button {
+        color: #FFFFFF;
+        min-width: 150px;
+        min-height: 40px;
+        border-radius: 10px;
+        background-color: #006d77;
+        border: 2px solid #83c5be;
+    }
 `;

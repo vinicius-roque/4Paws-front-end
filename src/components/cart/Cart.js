@@ -41,33 +41,27 @@ export default function Cart(){
         <>
         <Header/>
         <HeaderPage>
-            <p> Carrinho de compras</p>
+            <p>Carrinho de compras</p>
             <Freeship>
                 <p> Frete grátis acima de R$ 100,00</p>
-                <p> Confira as regras</p>
             </Freeship>
         </HeaderPage>
-        <CartBox>
-            <Statement>
-                <p>Produto</p>
-                <p>Preço</p>
-                <p>Quantidade</p>
-            </Statement>
+        <CartBox> 
             {cart.map((product,index) => (
                 //COLOCAR UMA VARIAVEL PARA VER SE O CARRINHO ESTA VAZIO E DAR UMA MENSAGEM
             <Product>
-            <img src={product.img} />
-           <p>{product.name}</p>
-           <h5>R$ {product.price}0</h5>
-           <h5>{product.quantity}</h5>
-           
-           <h5 onClick={() => remove(product._id)}>REMOVER</h5>
+                <img src={product.img} />
+                <p>{product.name}</p>
+                <h5>R$ {product.price}0</h5>
+                <h5>{product.quantity}</h5>
+            
+                <h4 onClick={() => remove(product._id)}>REMOVER</h4>
            </Product>
             ))}
           
         </CartBox>
         <Footer>
-            <p>Total da compra: R$ {saldo}0</p>
+            <p>Total da compra: R$ {saldo.toFixed(2)}</p>
             <button>
                 <Link to="/Checkout"><p>Prosseguir para pagamento</p></Link>
             </button>
@@ -77,109 +71,171 @@ export default function Cart(){
 }
 
 const HeaderPage = styled.div`
-display: flex;
-width: 95%;
-background-color: #d06D00;
-height:50px;
-justify-content: space-between;
-align-items: center;
-margin-top: 150px;
-border-radius: 5px;
-padding: 10px;
+    display: flex;
+    width: 95%;
+    background-color: #006d77;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 150px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #FFFFFF;
+
+    @media (max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Freeship = styled.div`
-display: flex;
-justify-content: flex-end;
-width: 85%;
-p{
-    padding: 0px 8px;
-}
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    
+    p {
+        padding: 0px 8px;
+    }
+
+    @media (max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
 `;
 
 const CartBox = styled.div`
-display: flex;
-flex-direction: column;
-width: 95%;
-justify-content: flex-start;
-padding: 55px 15px;
-background-color: #EDF6F9;
-border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    justify-content: flex-start;
+    padding: 55px 15px;
+    background-color: #edf6f9;
+    border-radius: 5px;
 
-img{
-    width: 90px;
-    height: 90px;
-}
-`;
-
-const ProductBox = styled.div`
-display: flex;
-justify-content: flex-end;
-border-radius: 10px;
+    img{
+        width: 90px;
+        height: 90px;
+    }
 `;
 
 const Footer = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: white;
-width: 95%;
-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #006d77;
+    width: 95%;
+    height: 50px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2px;
+    color: #FFFFFF;
 
-p{
-    margin-left: 5%; 
-}
-button{
-    background-color: white;
-    border-radius: 10px;
-    height:35px;
-    margin-right: 5%;
-}
+    p {  
+        margin-left: 5%; 
+        color: #000000;
+    }
+   
+    button {
+        background-color: #83c5be;
+        border-radius: 10px;
+        height:35px;
+        margin-right: 5%;
+        border: 2px solid #edf6f9;  
+    }
 
+    @media (max-width: 350px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80px;
+        margin-bottom: 5px;
+        
+        p {
+            margin-bottom: 10px;
+        }
+    }
 `;
 
 const Product = styled.div`
-display: flex;
-background-color: white;
-width: 100%;
-padding: 20px;
-border-bottom: 1px solid #ccc;
-border-radius: 10px;
-margin: 10px 0px;
-
-p{
     display: flex;
     align-items: center;
-    padding: 15px 6%;
-    min-width: 120px;
-    width: 40%;
-}
+    background-color: #83c5be;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px 0px;
 
-h5{
-    display: flex;
-    align-items: center;
-    padding: 15px 0px 15px 5%;
-    min-width: 120px;
-    width: 50%;
-}
-`;
+    p {
+        display: flex;
+        align-items: center;
+        padding: 15px 6%;
+        min-width: 120px;
+        width: 40%;
+    }
 
-const Statement = styled.div`
-display: flex;
-background-color: white;
-width: 100%;
-font-size: 20px;
-border-radius: 10px;
+    h5 {
+        display: flex;
+        align-items: center;
+        padding: 15px 0px 15px 5%;
+        min-width: 120px;
+        width: 50%;
+    }
 
-p:first-child{
-    padding: 25px 7%;
-}
+    h4 {
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0px 15px 5%;
+        min-width: 120px;
+        width: 50%;
+        height: 50px;
+        border: 2px solid #edf6f9;
+        background-color: #006d77;
+        border-radius: 25px;
+        padding: 12px;
+        cursor: pointer;
+    }
 
-p:nth-child(2){
-    padding: 25px 0px 25px 32%;
-}
+    @media (max-width: 650px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        :last-child {
+            margin-bottom: 30px;
+        }
 
-p:nth-child(3){
-    padding: 25px 0px 25px 32%;
-}
+        img {
+            height: 40%;
+            width: 70%;
+        }
+
+        p {
+            margin-left: 0.1%;
+            justify-content: center;
+        }
+
+        h5 {
+            margin-left: -5%;
+            display: flex;
+            justify-content: center;
+        }
+
+        h4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #edf6f9;
+            background-color: #006d77;
+            border-radius: 25px;
+            padding: 12px;
+        }
+    }
 `;
