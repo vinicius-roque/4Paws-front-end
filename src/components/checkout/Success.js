@@ -18,7 +18,7 @@ export default function Success(){
             </Body>
            
             <Footer>
-                <Link to="/Home"><button>
+                <Link to="/"><button>
                 <p>Continuar comprando</p>
                 </button> </Link>
             </Footer>
@@ -45,11 +45,13 @@ const HeaderPage = styled.div`
         margin-bottom: 30px;
         text-align: center;
         font-size: 20px;
+        font-weight: 600;
     }
 
     p {
         margin-bottom: 100px;
         font-size: 30px;
+        font-weight: 700;
     }
 `;
 
@@ -71,6 +73,7 @@ const Body = styled.div`
         background-color: #006d77;
         border-radius: 25px;
         padding: 12px;
+        font-weight: 550;
         cursor: pointer;
     }
 `;
@@ -94,6 +97,7 @@ const Footer = styled.div`
         background-color: #006d77;
         border-radius: 25px;
         padding: 12px;
+        font-weight: 550;
         cursor: pointer;
     }
 `;

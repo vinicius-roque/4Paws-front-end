@@ -17,7 +17,7 @@ export default function Product({ id, name, price, img, quantity,type }) {
     <Wrapper>
       <img src={img} />
       <h3>{name}</h3>
-      <p> R$ {price}</p>
+      <p>R$ {price}</p>
       <button onClick={() => addToCart()}> Adicionar ao carrinho </button>
     </Wrapper>
   );
@@ -48,6 +48,7 @@ const Wrapper = styled.div`
     justify-content: center;
     font-size: 18px;
     width: 100%;
+    font-weight: 600;
   }
 
   p {
@@ -57,6 +58,7 @@ const Wrapper = styled.div`
     width: 100%;
     text-align: left;
     padding: 15px 0;
+    font-weight: 500;
   }
 
   button {
@@ -64,6 +66,7 @@ const Wrapper = styled.div`
     background-color: #006d77;
     border-radius: 25px;
     padding: 12px;
+    cursor: pointer;
   }
 
   @media (max-width: 850px) {
